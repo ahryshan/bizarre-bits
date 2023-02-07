@@ -1,0 +1,24 @@
+<header>
+  <div class="logo">
+    <a [routerLink]="['/']"><img src="assets/images/bizarre_bits_logo.svg" alt="Bizarre bits logo"/></a>
+  </div>
+  <button *ngIf="isNarrowScreen; else wideScreenNav" (click)="showNavSlider = !showNavSlider">
+    <fa-icon [icon]="showNavSlider ? FA_XMARK :FA_BARS"></fa-icon>
+  </button>
+  <ng-template #wideScreenNav>
+    <nav>
+      <a [routerLink]="['/', 'projects']" class="animated">Projects</a>
+      <a [routerLink]="['/', 'about']" class="animated">About us</a>
+      <a href="https://github.com/Bizarre-Bits" target="_blank" class="animated">
+        Our Github
+      </a>
+    </nav>
+  </ng-template>
+
+  <div class="nav-menu-slider" *ngIf="isNarrowScreen && showNavSlider" (click)="showNavSlider = false">
+    <a [routerLink]="['/']" class="animated">Home</a>
+    <a [routerLink]="['/', 'projects']" class="animated">Projects</a>
+    <a [routerLink]="['/', 'about']" class="animated">About us</a>
+    <a href="https://github.com/Bizarre-Bits" target="_blank" class="animated">Our Github</a>
+  </div>
+</header>

@@ -69,7 +69,8 @@
               "browserTarget": "BizarreBits:build:production"
             },
             "development": {
-              "browserTarget": "BizarreBits:build:development"
+              "browserTarget": "BizarreBits:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"
@@ -90,7 +91,6 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.png",
               "src/assets"
             ],
             "styles": [

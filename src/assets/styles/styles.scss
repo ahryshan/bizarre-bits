@@ -21,11 +21,19 @@ body {
   letter-spacing: 0.075em;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 a {
   display: inline-block;
   color: $primary-color;
   position: relative;
+  text-decoration: none;
+}
 
+a.animated {
   &:after {
     position: absolute;
 
