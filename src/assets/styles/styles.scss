@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $primary-bg;
+  color: $primary-color;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.075em;
+}
+
+a {
+  display: inline-block;
+  color: $primary-color;
+  position: relative;
+
+  &:after {
+    position: absolute;
+
+    display: block;
+    content: "";
+    background: currentColor;
+
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0.1em;
+    transition: width ease-in-out 0.25s;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}
