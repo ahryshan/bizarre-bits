@@ -1,6 +1,6 @@
 <header>
   <div class="logo">
-    <a [routerLink]="['/']"><img src="assets/images/bizarre_bits_logo.svg" alt="Bizarre bits logo"/></a>
+    <a [routerLink]="['/']"><img src="assets/images/bizarre_bits_logo_plain.svg" alt="Bizarre bits logo"/></a>
   </div>
   <button *ngIf="isNarrowScreen; else wideScreenNav" (click)="showNavSlider = !showNavSlider">
     <fa-icon [icon]="showNavSlider ? FA_XMARK :FA_BARS"></fa-icon>
