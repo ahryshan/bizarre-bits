@@ -1,5 +1,5 @@
 import {Route} from "@angular/router";
-import {HomeComponent} from "./components/home/home.component";
+import {HomeComponent} from "./pages/home/home.component";
 
 export const APP_ROUTES: Route[] = [
   {
@@ -17,10 +17,10 @@ export const APP_ROUTES: Route[] = [
   },
   {
     path: "projects",
-    loadComponent: () => import("./components/projects/projects.component").then(m => m.ProjectsComponent)
+    loadComponent: () => import("./pages/projects/projects.component").then(m => m.ProjectsComponent)
   },
   {
     path: "about",
-    loadComponent: () => import("./components/about/about.component").then(m => m.AboutComponent)
+    loadComponent: () => import("./pages/about/about.component").then(m => m.AboutComponent)
   }
 ]

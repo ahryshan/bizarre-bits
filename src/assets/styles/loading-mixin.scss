@@ -1,0 +1,18 @@
+@import "variables";
+
+@mixin default-loading() {
+  @keyframes Background {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  background: $loading-placeholder-base;
+  background: linear-gradient(90deg, $loading-placeholder-base 40%, $loading-placeholder-gradient-accent 50%, $loading-placeholder-base 60%);
+  background-size: 200vw 100vh;
+  background-attachment: fixed;
+  animation: Background 1.5s infinite ease-in-out;
+}

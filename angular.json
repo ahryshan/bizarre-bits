@@ -57,7 +57,17 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                },
+                {
+                  "replace": "src/environments/secrets.ts",
+                  "with": "src/environments/secrets.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -70,7 +80,8 @@
             },
             "development": {
               "browserTarget": "BizarreBits:build:development",
-              "host": "0.0.0.0"
+              "host": "0.0.0.0",
+              "port": 4200
             }
           },
           "defaultConfiguration": "development"

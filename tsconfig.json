@@ -20,13 +20,34 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "@assets/*": ["src/assets"]
+      "~assets/*": [
+        "src/assets/*"
+      ],
+      "~services/*": [
+        "src/app/services/*"
+      ],
+      "~models/*": [
+        "src/app/models/*"
+      ],
+      "~components/*": [
+        "src/app/components/*"
+      ],
+      "~utils/*": [
+        "src/app/utils/*"
+      ],
+      "~utils": [
+        "src/app/utils"
+      ],
+      "~environment": [
+        "src/environments/environment.ts"
+      ]
     },
     "lib": [
       "ES2022",
       "dom"
-    ]
-
+    ],
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "get-secrets": "node src/environments/get-secrets.js",
+    "build:prod": "yarn get-secrets && ng build --configuration production"
   },
   "private": true,
   "dependencies": {

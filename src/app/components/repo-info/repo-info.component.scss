@@ -1,0 +1,89 @@
+@import "/src/assets/styles/variables";
+@import "/src/assets/styles/loading-mixin";
+
+.card-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: $primary-bg-lvl-1;
+  padding: 1rem;
+}
+
+.repo-info {
+  .repo-info-title {
+    margin: 0;
+  }
+  .repo-info-date {
+    margin-top: 0;
+    font-size: 0.85rem;
+    font-weight: 300;
+  }
+
+  &.loading {
+    & > * {
+      @include default-loading;
+      box-sizing: content-box;
+      height: 1em;
+      width: 10em;
+      //border-radius: 0.1em;
+    }
+  }
+}
+
+.lang-chart {
+  display: flex;
+}
+
+.chart-item {
+  height: 1rem;
+  background: currentColor;
+  filter: brightness(100%);
+  transition: all ease-in-out 0.2s;
+
+  &.hovered-chart-item {
+    filter: brightness(150%);
+  }
+
+  &:first-child {
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+
+  &.loading {
+    width: 100%;
+    @include default-loading;
+  }
+}
+
+.languages-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+
+  & > .lang-chip {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    user-select: none;
+    filter: brightness(100%);
+    transition: all ease-in-out 0.2s;
+
+    &.hovered {
+      filter: brightness(150%);
+    }
+  }
+
+  & > .loading {
+    width: 7em;
+    height: 2em;
+    @include default-loading();
+  }
+}
+

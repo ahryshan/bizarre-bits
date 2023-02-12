@@ -1,0 +1,45 @@
+<div class="card-wrapper">
+  <div class="repo-info" [ngClass]="{'loading': loadingStatus.repoInfo}">
+    <h2 class="repo-info-title">{{repository?.name}}</h2>
+    <p class="repo-info-date">{{repository?.created_at | date}}</p>
+    <p class="repo-info-description">{{repository?.description}}</p>
+  </div>
+  <ng-container *ngIf="!loadingStatus.repoLangs; else repoLangsLoading">
+    <div class="lang-chart">
+      <div
+          *ngFor="let lang of repoLanguages; let i = index"
+          class="chart-item"
+          [style.width]="lang.percentage + '%'"
+          [style.color]="lang.color"
+          [ngClass]="{'hovered-chart-item': hoveredRepoLangIndex === i}"
+          (mouseenter)="hoveredRepoLangIndex = i"
+          (mouseleave)="hoveredRepoLangIndex = -1"
+      >
+      </div>
+    </div>
+    <div class="languages-legend">
+        <span
+            class="lang-chip"
+            *ngFor="let lang of repoLanguages; let i = index"
+            [style.color]="lang.color.lighten(4)"
+            [style.background-color]="lang.color"
+            [ngClass]="{'hovered': hoveredRepoLangIndex === i}"
+            (mouseenter)="hoveredRepoLangIndex = i"
+            (mouseleave)="hoveredRepoLangIndex = -1"
+        >
+          {{lang.label}}
+        </span>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #repoLangsLoading>
+  <div class="lang-chart">
+    <div class="chart-item loading"></div>
+  </div>
+  <div class="languages-legend">
+        <span class="lang-chip loading"
+              *ngFor="let _ of [].constructor(5)">
+        </span>
+  </div>
+</ng-template>

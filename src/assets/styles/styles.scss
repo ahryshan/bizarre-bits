@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "variables";
+@import "media-breakpoints";
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
 
@@ -14,6 +15,7 @@ body {
 }
 
 body {
+  min-height: 100vh;
   background: $primary-bg;
   color: $primary-color;
   font-family: Lato, sans-serif;
@@ -50,5 +52,24 @@ a.animated {
 
   &:hover:after {
     width: 100%;
+  }
+}
+
+.page-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-top: 7.5rem;
+
+
+
+  & > * {
+    width: 80%;
+    max-width: 1200px;
+
+    @media #{$media-mobile} {
+      width: 100%;
+    }
   }
 }

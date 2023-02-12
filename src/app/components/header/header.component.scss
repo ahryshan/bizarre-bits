@@ -1,7 +1,16 @@
-@import "./src/assets/styles/variables";
+@import "/src/assets/styles/variables";
+@import "/src/assets/styles/media-breakpoints";
+
+$header-bg-transparent: adjust-color($primary-bg, $alpha: -0.20);
 
 header {
   display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: $header-bg-transparent;
+  z-index: 999;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 3rem;
@@ -13,7 +22,7 @@ header {
     border: none;
     color: $primary-color;
     font-size: 2rem;
-    z-index: 999;
+    z-index: 9999;
   }
 }
 
@@ -40,15 +49,15 @@ nav {
   right: 0;
   left: 0;
 
-  background: rgba(0, 0, 0, 0.70);
-  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 59%);
+  background: $header-bg-transparent;
+  background: linear-gradient(90deg, transparent 0%, $header-bg-transparent 75%);
 }
 
 .nav-menu-slider-close-button {
   display: block;
 }
 
-@media (max-width: 600px) {
+@media #{$media-mobile} {
   header {
     padding: 1rem;
   }
