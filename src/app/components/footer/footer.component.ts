@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core'
 import { CommonModule } from '@angular/common';
+import {APP_CONFIG, AppConfig} from '~models/global-injection-tokens'
 
 @Component({
   selector: 'app-footer',
@@ -9,5 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  constructor(@Inject(APP_CONFIG) public appConfig: AppConfig) {
+  }
 
 }

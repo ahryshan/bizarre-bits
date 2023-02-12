@@ -2,7 +2,7 @@ import {Inject, Injectable} from '@angular/core'
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import {IGithubRepo} from '~models/github-repo.model'
 import {Observable} from 'rxjs'
-import {APP_CONFIG, IAppConfig} from '~models/global-injection-tokens'
+import {APP_CONFIG, AppConfig} from '~models/global-injection-tokens'
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +10,7 @@ import {APP_CONFIG, IAppConfig} from '~models/global-injection-tokens'
 export class GithubService {
   private readonly API_REPOS_URL = 'https://api.github.com/repos'
 
-  constructor(private http: HttpClient, @Inject(APP_CONFIG) private config: IAppConfig) {
+  constructor(private http: HttpClient, @Inject(APP_CONFIG) private config: AppConfig) {
   }
 
   public getRepo(repoFullName: string): Observable<IGithubRepo> {

@@ -1,5 +1,5 @@
 @import "/src/assets/styles/variables";
-@import "/src/assets/styles/loading-mixin";
+@import "/src/assets/styles/main-mixins";
 
 .card-wrapper {
   margin: 0 auto;
@@ -15,8 +15,6 @@
   }
   .repo-info-date {
     margin-top: 0;
-    font-size: 0.85rem;
-    font-weight: 300;
   }
 
   &.loading {

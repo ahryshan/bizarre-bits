@@ -1,7 +1,7 @@
 <div class="card-wrapper">
   <div class="repo-info" [ngClass]="{'loading': loadingStatus.repoInfo}">
     <h2 class="repo-info-title">{{repository?.name}}</h2>
-    <p class="repo-info-date">{{repository?.created_at | date}}</p>
+    <p class="repo-info-date small-text">{{repository?.created_at | date}}</p>
     <p class="repo-info-description">{{repository?.description}}</p>
   </div>
   <ng-container *ngIf="!loadingStatus.repoLangs; else repoLangsLoading">
